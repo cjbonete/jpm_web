@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ darkMode: true }" :class="{ 'dark': darkMode }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPM Serv Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom animation for Section 2 Rolling Logos */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+            display: flex;
+            width: 200%;
+            animation: scroll 20s linear infinite;
+        }
+        .dark { color-scheme: dark; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 transition-colors duration-300">
+
+    <!-- NAVBAR (To be moved to templates/navbar.html) -->
+    <nav class="fixed w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800" x-data="{ mobileMenu: false, servicesOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <img src="images/logo.jpg" alt="Logo" class="h-10 w-10">
+                    <span class="font-bold text-xl tracking-tight">John Paul Mercado</span>
+                </div>
+                
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#blog" class="hover:text-blue-500 transition">Blog</a>
+                    <a href="#about" class="hover:text-blue-500 transition">About</a>
+                    <div class="relative">
+                        <button @click="servicesOpen = !servicesOpen" class="flex items-center gap-1 hover:text-blue-500 transition">
+                            Services <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div x-show="servicesOpen" @click.away="servicesOpen = false" class="absolute top-full mt-2 w-48 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg shadow-xl">
+                            <a href="#" class="block px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-800">Clearance</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-800">Assistance</a>
+                        </div>
+                    </div>
+                    <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
+                    <button @click="darkMode = !darkMode" class="p-2 rounded-full bg-zinc-200 dark:bg-zinc-800">
+                        <i x-show="!darkMode" class="fas fa-moon"></i>
+                        <i x-show="darkMode" class="fas fa-sun"></i>
+                    </button>
+                </div>
+
+                <!-- Burger Icon -->
+                <div class="md:hidden">
+                    <button @click="mobileMenu = !mobileMenu" class="text-2xl"><i class="fas fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenu" class="md:hidden bg-white dark:bg-zinc-900 px-4 pt-2 pb-6 border-b border-zinc-800">
+            <a href="#blog" class="block py-2">Blog</a>
+            <a href="#about" class="block py-2">About</a>
+            <a href="#contact" class="block py-2">Contact</a>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO -->
+    <section class="pt-20 pb-20 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+            <div class="relative inline-block">
+                <img src="images/hero-captain.jpeg" alt="Captain" class="rounded-2xl grayscale hover:grayscale-0 transition duration-500 shadow-2xl">
+                <div class="absolute -bottom-6 -right-6 bg-blue-600 text-white p-6 rounded-xl hidden lg:block">
+                    <p class="text-3xl font-bold">10+</p>
+                    <p class="text-xs uppercase tracking-widest">Public Services</p>
+                    <hr class="my-2 border-blue-400">
+                    <p class="text-3xl font-bold">5k+</p>
+                    <p class="text-xs uppercase tracking-widest">Projects Done</p>
+                </div>
+            </div>
+        </div>
+        <div class="order-1 md:order-2 space-y-6">
+            <h1 class="text-5xl md:text-7xl font-black leading-tight italic">
+                "SERVICE BEYOND <span class="text-blue-600">OFFICE.</span>"
+            </h1>
+            <p class="text-zinc-500 text-lg">Your Captain's commitment to a safer, cleaner, and more progressive community for every family.</p>
+            <div class="flex gap-4">
+                <a href="#contact" class="px-8 py-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">Get in Touch</a>
+                <a href="#about" class="px-8 py-4 border border-zinc-400 dark:border-zinc-700 rounded-full font-bold">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ROLLING LOGOS -->
+    <section class="py-10 bg-zinc-100 dark:bg-zinc-900 overflow-hidden border-y border-zinc-200 dark:border-zinc-800">
+        <div class="animate-scroll whitespace-nowrap flex items-center space-x-20">
+            <!-- Repeat these 2x for seamless loop -->
+            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">SK Council</span>
+            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">BDRRMC</span>
+            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">LGU Optimized</span>
+            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">DILG Compliant</span>
+            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">Clean & Green</span>
+            <!-- Set 2 -->
+            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">SK Council</span>
+            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">BDRRMC</span>
+            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">LGU Optimized</span>
+            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">DILG Compliant</span>
+            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">Clean & Green</span>
+        </div>
+    </section>
+
+    <!-- SECTION 3: NEWS CAROUSEL -->
+    <section class="py-20 px-6 max-w-7xl mx-auto" x-data="{ active: 0, interval: null }" x-init="interval = setInterval(() => { active = active === 2 ? 0 : active + 1 }, 3000)">
+        <div class="flex justify-between items-end mb-8">
+            <h2 class="text-3xl font-bold">News & Updates</h2>
+            <div class="flex gap-2">
+                <button @click="active = active === 0 ? 2 : active - 1" class="p-3 bg-zinc-200 dark:bg-zinc-800 rounded-full hover:bg-blue-600 transition"><i class="fas fa-arrow-left"></i></button>
+                <button @click="active = active === 2 ? 0 : active + 1" class="p-3 bg-zinc-200 dark:bg-zinc-800 rounded-full hover:bg-blue-600 transition"><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+        <div class="relative overflow-hidden rounded-3xl h-[400px]">
+            <template x-for="(slide, i) in [1, 2, 3]">
+                <div x-show="active === i" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-x-full" x-transition:enter-end="opacity-100 translate-x-0" class="absolute inset-0 bg-zinc-800 flex items-center justify-center border-4 border-zinc-900">
+                    <span class="text-4xl font-bold text-zinc-500">Banner Update <span x-text="slide"></span></span>
+                </div>
+            </template>
+        </div>
+    </section>
+
+    <!-- SECTION 4: BLOG PREVIEWS -->
+    <section id="blog" class="py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-10">Daily Logs</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <template x-for="i in [1,2,3]">
+                <div class="group cursor-pointer">
+                    <div class="aspect-video bg-zinc-200 dark:bg-zinc-900 rounded-xl mb-4 overflow-hidden">
+                        <div class="w-full h-full group-hover:scale-105 transition duration-500 bg-zinc-800"></div>
+                    </div>
+                    <p class="text-sm text-blue-500 font-mono mb-2 uppercase tracking-widest">May 08, 2026</p>
+                    <h3 class="text-xl font-bold group-hover:text-blue-500 transition leading-snug">Barangay Clean-up Drive: 200+ Volunteers Joined</h3>
+                </div>
+            </template>
+        </div>
+    </section>
+
+    <!-- SECTION 5: ABOUT -->
+    <section id="about" class="py-20 bg-blue-600 text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <i class="fas fa-quote-left text-4xl mb-6 opacity-50"></i>
+            <h2 class="text-3xl md:text-5xl font-light italic leading-relaxed">
+                "Leadership is not a position or a title, it is action and example. We work every day to ensure that our Barangay is not just a place, but a home for everyone."
+            </h2>
+            <p class="mt-8 font-bold uppercase tracking-[0.3em]">- Kgwd. John Paul Mercado</p>
+        </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT FORM -->
+    <section id="contact" class="py-20 px-6 max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-black mb-4 uppercase">Message the Office</h2>
+            <p class="text-zinc-500">We aim to respond within 24 hours.</p>
+        </div>
+        <form class="space-y-4">
+            <div class="grid md:grid-cols-2 gap-4">
+                <input type="text" placeholder="Full Name" class="w-full p-4 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 outline-none focus:border-blue-500 transition">
+                <input type="email" placeholder="Email Address" class="w-full p-4 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 outline-none focus:border-blue-500 transition">
+            </div>
+            <textarea rows="5" placeholder="Your Message" class="w-full p-4 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 outline-none focus:border-blue-500 transition"></textarea>
+            <button class="w-full py-4 bg-zinc-900 dark:bg-white dark:text-black text-white font-bold rounded-xl hover:opacity-90 transition">SEND MESSAGE</button>
+        </form>
+    </section>
+
+    <!-- SECTION 7: BENTO BOX EMERGENCIES -->
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-4 h-auto md:h-[400px]">
+            <div class="md:col-span-2 bg-red-600 p-8 rounded-3xl text-white flex flex-col justify-end">
+                <i class="fas fa-ambulance text-4xl mb-4"></i>
+                <h3 class="text-2xl font-bold">Emergency Hotline</h3>
+                <p class="text-red-100">Immediate response for medical emergencies.</p>
+            </div>
+            <div class="bg-zinc-800 p-8 rounded-3xl text-white flex flex-col justify-end">
+                <i class="fas fa-fire-extinguisher text-4xl mb-4"></i>
+                <h3 class="text-xl font-bold">Fire Dept</h3>
+            </div>
+            <div class="bg-blue-800 p-8 rounded-3xl text-white flex flex-col justify-end">
+                <i class="fas fa-shield-alt text-4xl mb-4"></i>
+                <h3 class="text-xl font-bold">Police</h3>
+            </div>
+            <div class="md:col-span-4 bg-zinc-200 dark:bg-zinc-900 p-8 rounded-3xl flex items-center justify-between border border-zinc-300 dark:border-zinc-800">
+                <div>
+                    <h3 class="text-xl font-bold">Quick Report</h3>
+                    <p class="text-zinc-500">Report suspicious activity or street-light issues.</p>
+                </div>
+                <button class="px-6 py-3 bg-zinc-950 text-white rounded-full">Report Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: FOOTER + MODALS -->
+    <footer class="py-12 border-t border-zinc-200 dark:border-zinc-800 text-center" x-data="{ openModal: null }">
+        <div class="flex justify-center space-x-8 mb-6">
+            <button @click="openModal = 'facebook'" class="text-zinc-400 hover:text-blue-600 text-2xl transition"><i class="fab fa-facebook"></i></button>
+            <button @click="openModal = 'whatsapp'" class="text-zinc-400 hover:text-green-500 text-2xl transition"><i class="fab fa-whatsapp"></i></button>
+            <button @click="openModal = 'phone'" class="text-zinc-400 hover:text-zinc-900 dark:hover:text-white text-2xl transition"><i class="fas fa-phone"></i></button>
+        </div>
+        <p class="text-zinc-600 text-sm">© 2026 Carl Designs. All rights reserved.</p>
+
+        <!-- POPUP MODALS -->
+        <div x-show="openModal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" x-transition>
+            <div @click.away="openModal = null" class="bg-white dark:bg-zinc-900 p-8 rounded-2xl max-w-sm w-full shadow-2xl">
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold mb-4 capitalize" x-text="openModal"></h3>
+                    <p class="text-zinc-500 mb-6" x-show="openModal === 'facebook'">Official Facebook Page: /BarangayCaptainOfficial</p>
+                    <p class="text-zinc-500 mb-6" x-show="openModal === 'phone'">Hotline: (02) 888-CAPT</p>
+                    <button @click="openModal = null" class="w-full py-2 bg-blue-600 text-white rounded-lg">Close</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CHATBOT BUTTON -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button class="h-16 w-16 bg-blue-600 text-white rounded-full shadow-2xl hover:scale-110 transition flex items-center justify-center">
+            <i class="fas fa-comment-alt text-2xl"></i>
+        </button>
+    </div>
+
+</body>
+</html>

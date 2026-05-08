@@ -23,6 +23,7 @@
 </head>
 <body class="bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 transition-colors duration-300">
 
+    <!-- ============================================================================================================== -->
     <!-- NAVBAR (To be moved to templates/navbar.html) -->
     <nav class="fixed w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800" x-data="{ mobileMenu: false, servicesOpen: false }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,7 +66,7 @@
             <a href="#contact" class="block py-2">Contact</a>
         </div>
     </nav>
-
+    <!-- ============================================================================================================== -->
     <!-- SECTION 1: HERO -->
     <section class="pt-20 pb-20 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div class="order-2 md:order-1">
@@ -84,7 +85,7 @@
             <h1 class="text-5xl md:text-7xl font-black leading-tight italic">
                 "SERVICE BEYOND <span class="text-blue-600">OFFICE.</span>"
             </h1>
-            <p class="text-zinc-500 text-lg">Your Captain's commitment to a safer, cleaner, and more progressive community for every family.</p>
+            <p class="text-zinc-500 text-lg">Your Kagawad's commitment to a safer, cleaner, and more progressive Brgy 187 for every family.</p>
             <div class="flex gap-4">
                 <a href="#contact" class="px-8 py-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">Get in Touch</a>
                 <a href="#about" class="px-8 py-4 border border-zinc-400 dark:border-zinc-700 rounded-full font-bold">Learn More</a>
@@ -92,42 +93,108 @@
         </div>
     </section>
 
+    <!-- ============================================================================================================== -->
     <!-- SECTION 2: ROLLING LOGOS -->
-    <section class="py-10 bg-zinc-100 dark:bg-zinc-900 overflow-hidden border-y border-zinc-200 dark:border-zinc-800">
-        <div class="animate-scroll whitespace-nowrap flex items-center space-x-20">
-            <!-- Repeat these 2x for seamless loop -->
-            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">SK Council</span>
-            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">BDRRMC</span>
-            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">LGU Optimized</span>
-            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">DILG Compliant</span>
-            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">Clean & Green</span>
-            <!-- Set 2 -->
-            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">SK Council</span>
-            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">BDRRMC</span>
-            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">LGU Optimized</span>
-            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">DILG Compliant</span>
-            <span class="text-2xl font-bold opacity-30 uppercase tracking-tighter">Clean & Green</span>
-        </div>
-    </section>
+<section class="py-10 bg-zinc-100 dark:bg-zinc-900 overflow-hidden border-y border-zinc-200 dark:border-zinc-800">
+    <!-- Container for the scroll animation -->
+    <div class="flex overflow-hidden">
+        <div class="animate-scroll whitespace-nowrap flex items-center space-x-20 min-w-full">
+            
+            <!-- LOGO SET 1 -->
+            <img src="images/otherlogos/logo1.png" alt="Partner 1" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+            <img src="images/otherlogos/logo2.png" alt="Partner 2" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+            <img src="images/otherlogos/logo3.png" alt="Partner 3" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+            <img src="images/otherlogos/logo4.png" alt="Partner 4" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+            <img src="images/otherlogos/logo5.jpg" alt="Partner 5" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+            <img src="images/otherlogos/logo6.png" alt="Partner 6" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
 
-    <!-- SECTION 3: NEWS CAROUSEL -->
-    <section class="py-20 px-6 max-w-7xl mx-auto" x-data="{ active: 0, interval: null }" x-init="interval = setInterval(() => { active = active === 2 ? 0 : active + 1 }, 3000)">
-        <div class="flex justify-between items-end mb-8">
-            <h2 class="text-3xl font-bold">News & Updates</h2>
-            <div class="flex gap-2">
-                <button @click="active = active === 0 ? 2 : active - 1" class="p-3 bg-zinc-200 dark:bg-zinc-800 rounded-full hover:bg-blue-600 transition"><i class="fas fa-arrow-left"></i></button>
-                <button @click="active = active === 2 ? 0 : active + 1" class="p-3 bg-zinc-200 dark:bg-zinc-800 rounded-full hover:bg-blue-600 transition"><i class="fas fa-arrow-right"></i></button>
-            </div>
+            <!-- LOGO SET 2 (Exact Duplicate for seamless loop) -->
+            <img src="images/otherlogos/logo1.png" alt="Partner 1" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+            <img src="images/otherlogos/logo2.png" alt="Partner 2" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+            <img src="images/otherlogos/logo3.png" alt="Partner 3" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+            <img src="images/otherlogos/logo4.png" alt="Partner 4" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+            <img src="images/otherlogos/logo5.jpg" alt="Partner 5" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+            <img src="images/otherlogos/logo6.png" alt="Partner 6" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
         </div>
-        <div class="relative overflow-hidden rounded-3xl h-[400px]">
-            <template x-for="(slide, i) in [1, 2, 3]">
-                <div x-show="active === i" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-x-full" x-transition:enter-end="opacity-100 translate-x-0" class="absolute inset-0 bg-zinc-800 flex items-center justify-center border-4 border-zinc-900">
-                    <span class="text-4xl font-bold text-zinc-500">Banner Update <span x-text="slide"></span></span>
+    </div>
+</section>
+
+    <!-- ============================================================================================================== -->
+    <!-- SECTION 3: NEWS CAROUSEL -->
+<section class="py-20 px-6 max-w-7xl mx-auto" 
+    x-data="{ 
+        active: 0, 
+        slides: [
+            'news1.jpg', 
+            'news2.jpg', 
+            'news3.jpg', 
+            'news4.jpg', 
+            'news5.jpg'
+        ],
+        next() { this.active = (this.active + 1) % this.slides.length },
+        prev() { this.active = (this.active - 1 + this.slides.length) % this.slides.length },
+        timer: null
+    }" 
+    x-init="timer = setInterval(() => { next() }, 3000)"
+    @mouseenter="clearInterval(timer)"
+    @mouseleave="timer = setInterval(() => { next() }, 3000)">
+
+    <div class="flex justify-between items-end mb-8">
+        <div>
+            <h2 class="text-3xl font-bold italic uppercase tracking-tighter">News & Updates</h2>
+            <p class="text-zinc-500 text-sm">Stay updated with the latest barangay activities.</p>
+        </div>
+        <div class="flex gap-2">
+            <button @click="prev()" class="p-3 bg-zinc-200 dark:bg-zinc-800 rounded-full hover:bg-blue-600 hover:text-white transition shadow-lg">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <button @click="next()" class="p-3 bg-zinc-200 dark:bg-zinc-800 rounded-full hover:bg-blue-600 hover:text-white transition shadow-lg">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Banner Container -->
+    <div class="relative overflow-hidden rounded-3xl h-[300px] md:h-[500px] group shadow-2xl">
+        <template x-for="(image, i) in slides" :key="i">
+            <div x-show="active === i" 
+                 x-transition:enter="transition ease-out duration-700" 
+                 x-transition:enter-start="opacity-0 scale-105" 
+                 x-transition:enter-end="opacity-100 scale-100"
+                 x-transition:leave="transition ease-in duration-700"
+                 x-transition:leave-start="opacity-100"
+                 x-transition:leave-end="opacity-0"
+                 class="absolute inset-0">
+                
+                <!-- Overlay Gradient for Readability -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+                
+                <!-- The News Image -->
+                <img :src="'images/news/' + image" 
+                     class="w-full h-full object-cover" 
+                     alt="News Update">
+
+                <!-- Optional Caption -->
+                <div class="absolute bottom-8 left-8 z-20">
+                    <span class="bg-blue-600 text-white px-3 py-1 text-xs font-bold uppercase mb-2 inline-block">Latest News</span>
+                    <!-- <h3 class="text-white text-2xl md:text-4xl font-black uppercase italic" x-text="'Update ' + (i + 1)"></h3> -->
                 </div>
+                
+            </div>
+        </template>
+
+        <!-- Slide Indicators -->
+        <div class="absolute bottom-4 right-8 z-30 flex gap-2">
+            <template x-for="(slide, i) in slides" :key="i">
+                <button @click="active = i" 
+                        :class="active === i ? 'bg-blue-600 w-8' : 'bg-white/50 w-2'" 
+                        class="h-2 rounded-full transition-all duration-300"></button>
             </template>
         </div>
-    </section>
+    </div>
+</section>
 
+    <!-- ============================================================================================================== -->
     <!-- SECTION 4: BLOG PREVIEWS -->
     <section id="blog" class="py-20 px-6 max-w-7xl mx-auto">
         <h2 class="text-3xl font-bold mb-10">Daily Logs</h2>
@@ -144,6 +211,7 @@
         </div>
     </section>
 
+    <!-- ============================================================================================================== -->
     <!-- SECTION 5: ABOUT -->
     <section id="about" class="py-20 bg-blue-600 text-white">
         <div class="max-w-4xl mx-auto px-6 text-center">
@@ -155,6 +223,7 @@
         </div>
     </section>
 
+    <!-- ============================================================================================================== -->
     <!-- SECTION 6: CONTACT FORM -->
     <section id="contact" class="py-20 px-6 max-w-3xl mx-auto">
         <div class="text-center mb-12">
@@ -171,6 +240,7 @@
         </form>
     </section>
 
+    <!-- ============================================================================================================== -->
     <!-- SECTION 7: BENTO BOX EMERGENCIES -->
     <section class="py-20 px-6 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-4 gap-4 h-auto md:h-[400px]">
@@ -197,6 +267,7 @@
         </div>
     </section>
 
+    <!-- ============================================================================================================== -->
     <!-- SECTION 8: FOOTER + MODALS -->
     <footer class="py-12 border-t border-zinc-200 dark:border-zinc-800 text-center" x-data="{ openModal: null }">
         <div class="flex justify-center space-x-8 mb-6">
@@ -219,6 +290,7 @@
         </div>
     </footer>
 
+    <!-- ============================================================================================================== -->
     <!-- CHATBOT BUTTON -->
     <div class="fixed bottom-6 right-6 z-50">
         <button class="h-16 w-16 bg-blue-600 text-white rounded-full shadow-2xl hover:scale-110 transition flex items-center justify-center">

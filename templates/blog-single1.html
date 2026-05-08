@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ darkMode: localStorage.getItem('dark') === 'true' }" x-init="$watch('darkMode', val => localStorage.setItem('dark', val))" :class="{ 'dark': darkMode }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pakikipagkamustahan sa mga Store Owners | Barangay 187</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    typography: (theme) => ({
+                        DEFAULT: {
+                            css: {
+                                color: theme('colors.zinc.900'),
+                                a: { color: theme('colors.blue.600'), '&:hover': { color: theme('colors.blue.700') } },
+                            },
+                        },
+                        invert: {
+                            css: {
+                                color: theme('colors.zinc.300'),
+                                a: { color: theme('colors.blue.400') },
+                            },
+                        },
+                    }),
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 transition-colors duration-300 antialiased">
+
+    <nav class="sticky top-0 z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 h-16 flex items-center px-6">
+        <a href="blog-list.html" class="text-zinc-500 hover:text-blue-600 transition flex items-center gap-2">
+            <i class="fas fa-arrow-left text-sm"></i>
+            <span class="font-bold uppercase text-xs tracking-widest">Back to Newsfeed</span>
+        </a>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-12 grid lg:grid-cols-12 gap-12">
+        
+        <div class="lg:col-span-8">
+            <header class="mb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="bg-blue-600 text-white text-[10px] font-black px-2 py-1 rounded uppercase">Community</span>
+                    <span class="text-zinc-500 text-sm font-mono italic">Published: May 08, 2026</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-black italic leading-tight uppercase tracking-tighter mb-6">
+                    Pakikipagkamustahan sa mga Store Owners ng Barangay 187
+                </h1>
+                
+                <div class="flex items-center gap-4 p-4 bg-zinc-50 dark:bg-zinc-900 rounded-2xl border border-zinc-100 dark:border-zinc-800">
+                    <img src="../images/logo.jpg" class="w-12 h-12 rounded-full border-2 border-blue-600" alt="Kagawad JohnPaul">
+                    <div>
+                        <p class="font-bold text-sm">Kagawad JohnPaul Ariola Mercado</p>
+                        <p class="text-xs text-zinc-500">Public Servant / @topfans</p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="rounded-3xl overflow-hidden mb-10 shadow-2xl">
+                <img src="../images/blogs/blog1.jpg" alt="Barangay 187 Store Owners" class="w-full h-auto">
+                <img src="../images/blogs/blog1_1.jpg" alt="Barangay 187 Store Owners" class="w-full h-auto">
+                <p class="bg-zinc-100 dark:bg-zinc-900 p-3 text-xs text-zinc-500 italic text-center">
+                    Kagawad JohnPaul Mercado during the community walk-through in Barangay 187.
+                </p>
+            </div>
+
+            <div class="prose prose-lg dark:prose-invert max-w-none prose-p:leading-relaxed prose-headings:italic">
+                <p class="text-xl font-medium text-blue-600 dark:text-blue-400 mb-6">
+                    "Ang ganitong simpleng pag-uusap ay mahalaga upang mas mapalalim ang ating samahan at mas mapagtibay ang ating pagkakaisa bilang isang komunidad."
+                </p>
+
+                <p>
+                    Ngayong araw ng Sabado, nagkaroon tayo ng pagkakataong makasama at makakwentuhan ang ilan sa ating mga store owners dito sa Barangay 187. 
+                </p>
+
+                <p>
+                    Maraming salamat po sa inyong oras, pakikipagkamustahan, at pagbabahagi ng inyong mga saloobin at karanasan. Ang layunin ng ating pagbisita ay hindi lamang upang bumati, kundi upang makinig sa mga hinaing at suhestiyon ng ating mga lokal na negosyante.
+                </p>
+
+                <h3>Pagkakaisa sa Progresibong Barangay</h3>
+                <p>
+                    Patuloy po tayong magtulungan at magkaisa para sa mas maayos at mas progresibong Barangay 187. Ang bawat kwento at karanasan na inyong ibinahagi ay magsisilbing gabay sa ating mga susunod na proyekto para sa ikabubuti ng ating nasasakupan.
+                </p>
+
+                <div class="my-8 p-6 border-l-4 border-blue-600 bg-zinc-50 dark:bg-zinc-900 italic">
+                    "Kaisa niyo ako sa pangarap na mas maunlad na komunidad. Tuloy-tuloy ang serbisyo, tuloy-tuloy ang pakikipagkapwa-tao."
+                </div>
+
+                <p>
+                    Muli, maraming salamat po sa mainit na pagtanggap. Hanggang sa susunod nating pagkikita!
+                </p>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex items-center gap-4">
+                <span class="text-sm font-bold uppercase tracking-widest text-zinc-500">Share This:</span>
+                <button class="p-3 bg-zinc-100 dark:bg-zinc-900 rounded-full hover:text-blue-600 transition"><i class="fab fa-facebook-f"></i></button>
+                <button class="p-3 bg-zinc-100 dark:bg-zinc-900 rounded-full hover:text-green-500 transition"><i class="fab fa-whatsapp"></i></button>
+                <button class="p-3 bg-zinc-100 dark:bg-zinc-900 rounded-full hover:text-blue-400 transition"><i class="fab fa-twitter"></i></button>
+            </div>
+        </div>
+
+        <aside class="lg:col-span-4 space-y-10">
+            <div>
+                <h4 class="text-lg font-black uppercase italic tracking-tighter mb-6 border-b-2 border-blue-600 inline-block">More Updates</h4>
+                <div class="space-y-6">
+                    <template x-for="i in [2,3,4]">
+                        <a href="#" class="flex gap-4 group">
+                            <div class="w-20 h-20 bg-zinc-800 rounded-xl overflow-hidden shrink-0 shadow-lg">
+                                <img :src="'images/blogs/blog' + i + '.jpg'" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm leading-snug group-hover:text-blue-600 transition line-clamp-2 uppercase italic">
+                                    Project Update: New Street Lights Installed in Phase 4
+                                </h5>
+                                <p class="text-[10px] text-zinc-500 mt-1 font-mono uppercase">May 07, 2026</p>
+                            </div>
+                        </a>
+                    </template>
+                </div>
+            </div>
+
+            <div class="bg-blue-600 p-8 rounded-3xl text-white">
+                <h4 class="text-2xl font-black italic uppercase leading-none mb-4">Have a Concern?</h4>
+                <p class="text-blue-100 text-sm mb-6">Directly message the office for assistance or reports.</p>
+                <a href="../index.html#contact" class="block text-center py-3 bg-white text-blue-600 font-bold rounded-xl hover:bg-zinc-100 transition shadow-lg">MESSAGE NOW</a>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="py-12 border-t border-zinc-200 dark:border-zinc-800 text-center text-zinc-500 text-sm">
+        <p>© 2026 Kagawad JohnPaul Mercado. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

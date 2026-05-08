@@ -72,7 +72,7 @@
         <div class="order-2 md:order-1">
             <div class="relative inline-block">
                 <img src="images/hero-captain.jpeg" alt="Captain" class="rounded-2xl grayscale hover:grayscale-0 transition duration-500 shadow-2xl">
-                <div class="absolute -bottom-6 -right-6 bg-blue-600 text-white p-6 rounded-xl hidden lg:block">
+                <div class="absolute -bottom-6 -right-6 bg-[#186827] text-white p-6 rounded-xl hidden lg:block">
                     <p class="text-3xl font-bold">10+</p>
                     <p class="text-xs uppercase tracking-widest">Public Services</p>
                     <hr class="my-2 border-blue-400">
@@ -82,12 +82,21 @@
             </div>
         </div>
         <div class="order-1 md:order-2 space-y-6">
+            <h3 class="text-3xl md:text-5xl font-black leading-tight">
+                <span class="text-[#238036]">JPM</span> Para Maglingkod
+            </h3>
+
+            <br>
+
             <h1 class="text-5xl md:text-7xl font-black leading-tight italic">
-                "SERVICE BEYOND <span class="text-blue-600">OFFICE.</span>"
+                "SERVICE BEYOND <span class="text-[#238036]">OFFICE.</span>"
             </h1>
             <p class="text-zinc-500 text-lg">Your Kagawad's commitment to a safer, cleaner, and more progressive Brgy 187 for every family.</p>
             <div class="flex gap-4">
-                <a href="#contact" class="px-8 py-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">Get in Touch</a>
+                <a href="#contact" 
+                class="px-8 py-4 bg-[#2A9941] text-white rounded-full font-bold hover:bg-[#238036] transition shadow-lg shadow-[#2A9941]/20">
+                Get in Touch
+                </a>
                 <a href="#about" class="px-8 py-4 border border-zinc-400 dark:border-zinc-700 rounded-full font-bold">Learn More</a>
             </div>
         </div>
@@ -210,6 +219,34 @@
             </template>
         </div>
     </section>
+
+    <section id="blog" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="flex justify-between items-center mb-10">
+        <h2 class="text-3xl font-bold italic uppercase tracking-tighter">Daily Logs</h2>
+        <a href="templates/blog-list.html" class="hidden md:block text-blue-600 font-bold hover:underline">
+            View All Posts <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+        <template x-for="post in recentPosts" :key="post.id">
+            <a :href="'blog-single.html?id=' + post.id" class="group cursor-pointer">
+                <div class="aspect-video bg-zinc-200 dark:bg-zinc-900 rounded-xl mb-4 overflow-hidden relative">
+                    <img :src="post.image" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 left-4 bg-blue-600 text-white text-[10px] px-2 py-1 rounded font-bold uppercase">New</div>
+                </div>
+                <p class="text-sm text-blue-500 font-mono mb-2 uppercase tracking-widest" x-text="post.date"></p>
+                <h3 class="text-xl font-bold group-hover:text-blue-600 transition leading-snug" x-text="post.title"></h3>
+            </a>
+        </template>
+    </div>
+
+    <div class="mt-10 md:hidden">
+        <a href="blog-list.html" class="block w-full text-center py-4 bg-zinc-900 dark:bg-white dark:text-black text-white font-bold rounded-xl">
+            GO TO BLOG
+        </a>
+    </div>
+</section>
 
     <!-- ============================================================================================================== -->
     <!-- SECTION 5: ABOUT -->
